@@ -1,0 +1,1 @@
+/home/suchitg/Documents/ObsidianVaults/fastai_notes/genai_bootcamp_notes.md
