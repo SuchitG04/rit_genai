@@ -19,4 +19,7 @@
 	- tf: number of times a word `w` occurs in a document d. func: `tf(w,d)` where `w` is the word and `d` is the document
 	- idf: first, `df` gives the occurrences of a word `w` in a corpus of N documents. func: `df(w) = num_occurrences of w in the corpus or N docs`. `idf` essentially measures the usefulness or the specificity of a word to a given document. func: `idf(w) = N / df(w)`. seems like this technique is useful for keyword extraction as well, in that it can highlight words that are important in a given document compared to the whole corpus.
 	- **moral of the story**: there's just too much abstraction given by many "ready-made" models. its good to learn the foundations.
-	- cosine similarity is just normalized dot product.
+- "Efficient Estimation of Word Representations in Vector Space" by Mikolov et al. - introduced cbow and skip-gram
+	- continuous bag of words (cbow): a prediction setting using a 2 layered neural network (1 input layer and 1 hidden layer and 1 softmax layer, but considered 2 layers coz the hidden layer and the softmax layers are merged. read more about hierarchical softmax - https://leimao.github.io/article/Hierarchical-Softmax/ and negative sampling - https://arxiv.org/pdf/1402.3722v1 and https://stackoverflow.com/a/41319421/15368987) for a word given some context. in the paper, the authors use 4 words as the context. in other, simpler, words, consider the example "this is fine, i am fine, said the poor dog". the model will be given "this is fine i" and "fine said the poor" as the context and will be tasked to predict "am".
+	- skip gram: this is the inverse of cbow, in the sense that the model is tasked to predict the context given a word.
+- cosine similarity is just normalized dot product.
